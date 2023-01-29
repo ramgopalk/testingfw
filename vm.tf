@@ -5,7 +5,7 @@
 
 resource "azurerm_resource_group" "test" {
   name     = var.azurerm_resource_group
-  location = "West US 2"
+  location = var.location
 }
 
 
