@@ -69,7 +69,11 @@ variable "azurerm_resource_group" {
 variable "location" {
   type    = string
 }
-
+# Public ip Connf
+variable "azurerm_public_ip" {
+  type    = string
+  default = "publicip_extlb"
+}
 
 
 # variable "azurerm_subnet" {
