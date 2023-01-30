@@ -74,7 +74,11 @@ variable "azurerm_public_ip" {
   type    = string
   default = "publicip_extlb"
 }
-
+# Route table Details
+variable "azurerm_route_table" {
+  type    = string
+  default = "internal_route"
+}
 
 # variable "azurerm_subnet" {
 #   type    = list(string)
