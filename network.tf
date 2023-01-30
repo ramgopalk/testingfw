@@ -1,7 +1,7 @@
 
 resource "azurerm_virtual_network" "test" {
   name                = var.azurerm_virtual_network
-  address_space       = ["10.1.0.0/16"]
+  address_space       = var.vnetaddress_space
   location            = azurerm_resource_group.test.location
   resource_group_name = azurerm_resource_group.test.name
 }

@@ -6,3 +6,12 @@ provider "azurerm" {
   client_secret   = var.client_secret
   tenant_id       = var.tenant_id
 }
+
+//provider
+terraform {
+required_providers {
+fortios = {
+source = "fortinetdev/fortios"
+}
+}
+}

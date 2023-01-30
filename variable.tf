@@ -18,11 +18,11 @@ variable "vmname" {
   default = ["fgt_activevm_a", "fgt_activevm_b"]
 }
 variable "license_type" {
-  default = "payg"
+  # default = "payg"
 }
 variable "publisher" {
   type    = string
-  default = "fortinet"
+  # default = "fortinet"
 }
 variable "fgtoffer" {
   type    = string
@@ -52,6 +52,7 @@ variable "admin_password" {
 variable "azurerm_virtual_network" {
   type    = string
 }
+variable "vnetaddress_space" {}
 # variable "azurerm_subnet" {
 #   type    = string
 #   default = [ "value" ]

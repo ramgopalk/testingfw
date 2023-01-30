@@ -6,3 +6,6 @@ client_secret   = "vHx8Q~3f1tzGUavM4ilsL2~Tc_WDSPEj273MhaSU"
 azurerm_resource_group  = "fgt_rg"
 location                = "westus2"
 azurerm_virtual_network = "fgt_vnet"
+vnetaddress_space       = ["10.1.0.0/16"]
+license_type            = "payg"
+publisher               = "fortinet"
