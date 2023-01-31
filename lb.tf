@@ -1,8 +1,8 @@
 
 resource "azurerm_lb" "test1" {
-#   count = 2
+  #   count = 2
   # name  = var.azurerm_lb[count.index]
-  name                = "external_lb"
+  name                = var.loadbalancer1
   location            = azurerm_resource_group.test.location
   resource_group_name = azurerm_resource_group.test.name
   # id                  = var.azurerm_lb[count.index]
@@ -24,10 +24,10 @@ resource "azurerm_lb_backend_address_pool" "test1" {
 
 
 resource "azurerm_lb" "test2" {
-  name                = "internal_lb"
+  name                = var.loadbalancer2
   location            = azurerm_resource_group.test.location
   resource_group_name = azurerm_resource_group.test.name
- 
+
 
   frontend_ip_configuration {
     name                 = "publicIPAddress"

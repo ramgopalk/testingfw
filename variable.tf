@@ -15,48 +15,52 @@ variable "tenant_id" {
 # Fortigate_vm Config Details
 variable "vmname" {
   type    = list(string)
-  default = ["fgt_activevm_a", "fgt_activevm_b"]
+  # default = ["fgt_activevm_a", "fgt_activevm_b"]
 }
-variable "license_type" {
-  # default = "payg"
-}
-variable "publisher" {
-  type    = string
-  # default = "fortinet"
-}
-variable "fgtoffer" {
-  type    = string
-  default = "fortinet_fortigate-vm_v5"
-}
-variable "fgtsku" {
-  type    = string
-  default = "fortinet_fg-vm_payg_2022"
-}
-variable "fgtversion" {
-  type    = string
-  default = "7.2.2"
-}
-variable "vm_size" {
-  type    = string
-  default = "Standard_F4"
-}
-variable "admin_username" {
-  type    = string
-  default = "azureadmin"
-}
-variable "admin_password" {
-  type    = string
-  default = "Fortinet@123#"
-}
+variable "license_type" {}
+variable "publisher" {}
+#   type    = string
+#   # default = "fortinet"
+# }
+variable "fgtoffer" {}
+#   type    = string
+#   # default = "fortinet_fortigate-vm_v5"
+# }
+variable "fgtsku" {}
+#   type    = string
+#   # default = "fortinet_fg-vm_payg_2022"
+# }
+variable "fgtversion" {}
+#   type    = string
+#   # default = "7.2.2"
+# }
+variable "vm_size" {}
+#   type    = string
+#   # default = "Standard_F4"
+# }
+# variable "disksize_gb " {}
+variable "hostname" {}
+variable "admin_username" {}
+#   type    = string
+#   # default = "azureadmin"
+# }
+variable "admin_password" {}
+#   type    = string
+#   # default = "Fortinet@123#"
+# }
 # VNET Config Details
 variable "azurerm_virtual_network" {
   type    = string
 }
 variable "vnetaddress_space" {}
-# variable "azurerm_subnet" {
-#   type    = string
-#   default = [ "value" ]
-# }
+
+variable "subnet1" {}
+variable "subnet2" {}
+variable "subnet3" {}
+
+variable "address_prefix_subnet1" {}
+variable "address_prefix_subnet2" {}
+variable "address_prefix_subnet3" {}
 
 # azurerm_network_interface Details
 variable "nicnames" {
@@ -80,6 +84,10 @@ variable "azurerm_route_table" {
   type    = string
   default = "internal_route"
 }
+variable "loadbalancer1" {}
+variable "loadbalancer2" {}
+
+variable "keyvault" {}
 
 # variable "azurerm_subnet" {
 #   type    = list(string)

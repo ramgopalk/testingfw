@@ -70,7 +70,7 @@
 #   }
 
 #   srcaddr {
-#       name = "FABRIC_DEVICE"
+#       name = "FABRIC_DEVICE"  
 #   }
 
 #   srcintf {

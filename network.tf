@@ -7,25 +7,25 @@ resource "azurerm_virtual_network" "test" {
 }
 
 resource "azurerm_subnet" "test1" {
-  name = "public_subnet"
+  name = var.subnet1
   # count                = 2
   # name                 = var.azurerm_subnet[count.index]
   resource_group_name  = azurerm_resource_group.test.name
   virtual_network_name = azurerm_virtual_network.test.name
-  address_prefixes     = ["10.1.0.0/24"]
+  address_prefixes     = var.address_prefix_subnet1
   # address_prefixes = var.address_prefixes[count.index]
 }
 
 resource "azurerm_subnet" "test2" {
-  name                 = "private_subnet"
+  name                 = var.subnet2
   resource_group_name  = azurerm_resource_group.test.name
   virtual_network_name = azurerm_virtual_network.test.name
-  address_prefixes     = ["10.1.1.0/24"]
+  address_prefixes     = var.address_prefix_subnet2
 }
 
 resource "azurerm_subnet" "test3" {
-  name                 = "protected_subnet"
+  name                 = var.subnet3
   resource_group_name  = azurerm_resource_group.test.name
   virtual_network_name = azurerm_virtual_network.test.name
-  address_prefixes     = ["10.1.1.1/32"]
+  address_prefixes     = var.address_prefix_subnet3
 }

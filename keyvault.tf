@@ -11,7 +11,7 @@
 
 
 resource "azurerm_key_vault" "keyvault" {
-  name                        = "fgt-keyvault"
+  name                        = var.keyvault
   location                    = azurerm_resource_group.test.location
   resource_group_name         = azurerm_resource_group.test.name
   enabled_for_disk_encryption = true
