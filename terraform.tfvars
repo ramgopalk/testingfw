@@ -41,3 +41,15 @@ loadbalancer2 = "internal_lb"
 
 //=================== Keyvault ====================//
 keyvault = "fgt-keyvault"
+
+//====================== Publicip & Routetable =============//
+azurerm_route_table         = "internal-route"
+azurerm_public_ip           = "publicip-extlb"
+network_security_group_name = "Public-NSG"
+
+//==================== Storage account ================//
+storageaccount           = "fgtstorage"
+account_replication_type = "LRS"
+account_tier             = "Standard"
+containername            = "fgt-container"
+container_access_type    = "private"

@@ -13,47 +13,23 @@ variable "tenant_id" {
 }
 
 # Fortigate_vm Config Details
-variable "vmname" {
-  type    = list(string)
-  # default = ["fgt_activevm_a", "fgt_activevm_b"]
-}
+variable "vmname" {}
 variable "license_type" {}
 variable "publisher" {}
-#   type    = string
-#   # default = "fortinet"
-# }
 variable "fgtoffer" {}
-#   type    = string
-#   # default = "fortinet_fortigate-vm_v5"
-# }
 variable "fgtsku" {}
-#   type    = string
-#   # default = "fortinet_fg-vm_payg_2022"
-# }
 variable "fgtversion" {}
-#   type    = string
-#   # default = "7.2.2"
-# }
 variable "vm_size" {}
-#   type    = string
-#   # default = "Standard_F4"
-# }
-# variable "disksize_gb " {}
 variable "hostname" {}
 variable "admin_username" {}
-#   type    = string
-#   # default = "azureadmin"
-# }
 variable "admin_password" {}
-#   type    = string
-#   # default = "Fortinet@123#"
-# }
+
 # VNET Config Details
 variable "azurerm_virtual_network" {
   type    = string
 }
 variable "vnetaddress_space" {}
-
+#Subnet
 variable "subnet1" {}
 variable "subnet2" {}
 variable "subnet3" {}
@@ -65,61 +41,27 @@ variable "address_prefix_subnet3" {}
 # azurerm_network_interface Details
 variable "nicnames" {
   type    = list(string)
-  default = ["fgtvm-a_nic1", "fgtvm-a_nic2","fgtvm-b_nic1","fgtvm-b_nic2"]
 }
 # Resource Group Details
-variable "azurerm_resource_group" {
-  type    = string
-}
-variable "location" {
-  type    = string
-}
+variable "azurerm_resource_group" {}
+#   type    = string
+# }
+variable "location" {}
+#   type    = string
+# }
 # Public ip Connf
-variable "azurerm_public_ip" {
-  type    = string
-  default = "publicip_extlb"
-}
+variable "azurerm_public_ip" {}
 # Route table Details
-variable "azurerm_route_table" {
-  type    = string
-  default = "internal_route"
-}
+variable "azurerm_route_table" {}
+#loadbalancer Details
 variable "loadbalancer1" {}
 variable "loadbalancer2" {}
-
+#keyvault
 variable "keyvault" {}
-
-# variable "azurerm_subnet" {
-#   type    = list(string)
-#   default = ["external", "internal"]
-# }
-# variable "address_prefixes" {
-#   type    = list(string)
-#   default = ["10.0.2.0/24", "10.0.3.0/24"]
-# }
-
-
-# variable "loadbalancer_id" {
-#   type    = list(string)
-#   default = ["external_lb", "internal_lb"]
-# }
-
-
-
-
-# variable "vmname" {
-#   type    = list(string)
-#   default = ["fgt_activevm_a", "fgt_activevm_b"]
-
-# }
-# variable "instance_type" {
-#   description = "azurerm_lb"
-#   type        = string
-#   test1       = "external_lb.id"
-#   test2       = "internal_lb.id"
-# }
-
-
-
-// BYOL sku: fortinet_fg-vm
-// PAYG sku: fortinet_fg-vm_payg_20190624
+#Storage account
+variable "storageaccount" {}
+variable "account_replication_type" {}
+variable "account_tier" {}
+variable "containername" {}
+variable "container_access_type" {}
+variable "network_security_group_name" {}
