@@ -7,13 +7,13 @@ resource "azurerm_storage_account" "storageaccount" {
   account_tier             = var.account_tier
 }
 
-resource "random_id" "randomId" {
-  keepers = {
-    resource_group = azurerm_resource_group.test.name
-  }
+# resource "random_id" "randomId" {
+#   keepers = {
+#     resource_group = azurerm_resource_group.test.name
+#   }
 
-  byte_length = 8
-}
+#   byte_length = 8
+# }
 
 resource "azurerm_storage_container" "container" {
   name                  = var.containername

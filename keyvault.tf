@@ -1,9 +1,9 @@
 # # provider "azurerm" {
 # #   features {
-#     key_vault {
-#       purge_soft_delete_on_destroy    = true
-#       recover_soft_deleted_key_vaults = true
-#     }
+    # key_vault {
+    #   purge_soft_delete_on_destroy    = true
+    #   recover_soft_deleted_key_vaults = true
+    # }
 # #   }
 # # }
 
@@ -21,20 +21,29 @@ resource "azurerm_key_vault" "keyvault" {
 
   sku_name = "standard"
 
-#   access_policy {
-#     tenant_id = var.tenant_id
-#     object_id = var.object_id
+  access_policy {
+    tenant_id = var.tenant_id
+    object_id = var.object_id
 
-#     key_permissions = [
-#       "Get",
-#     ]
+    key_permissions = [
+      "Get",
+    ]
 
-#     secret_permissions = [
-#       "Get",
-#     ]
+    secret_permissions = [
+      "Get",
+    ]
 
-#     storage_permissions = [
-#       "Get",
-#     ]
-#   }
+    storage_permissions = [
+      "Get",
+    ]
+  }
+}
+
+
+resource "random_id" "randomId" {
+  keepers = {
+    resource_group = azurerm_resource_group.test.name
+  }
+
+  byte_length = 8
 }

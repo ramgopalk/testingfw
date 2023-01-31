@@ -11,7 +11,10 @@ variable "client_secret" {
 variable "tenant_id" {
   type = string
 }
-
+variable "object_id" {
+  type = string
+  # default = "b8dbe7ed-8410-4646-9339-544a6015d38f"
+}
 # Fortigate_vm Config Details
 variable "vmname" {}
 variable "license_type" {}
@@ -22,11 +25,14 @@ variable "fgtversion" {}
 variable "vm_size" {}
 variable "hostname" {}
 variable "admin_username" {}
-variable "admin_password" {}
+variable "admin_password" {
+  type    = string
+  default = "random_id"
+}
 
 # VNET Config Details
 variable "azurerm_virtual_network" {
-  type    = string
+  type = string
 }
 variable "vnetaddress_space" {}
 #Subnet
@@ -40,7 +46,7 @@ variable "address_prefix_subnet3" {}
 
 # azurerm_network_interface Details
 variable "nicnames" {
-  type    = list(string)
+  type = list(string)
 }
 # Resource Group Details
 variable "azurerm_resource_group" {}

@@ -1,17 +1,18 @@
 provider "azurerm" {
   features {}
-  
+
   subscription_id = var.subscription_id
   client_id       = var.client_id
   client_secret   = var.client_secret
   tenant_id       = var.tenant_id
+  # object_id       = var.object_id
 }
 
 //provider
 terraform {
-required_providers {
-fortios = {
-source = "fortinetdev/fortios"
-}
-}
+  required_providers {
+    fortios = {
+      source = "fortinetdev/fortios"
+    }
+  }
 }
