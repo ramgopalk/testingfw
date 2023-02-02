@@ -26,8 +26,6 @@ variable "vm_size" {}
 variable "hostname" {}
 variable "admin_username" {}
 variable "admin_password" {
-  type    = string
-  default = "random_id"
 }
 
 # VNET Config Details
@@ -71,3 +69,5 @@ variable "account_tier" {}
 variable "containername" {}
 variable "container_access_type" {}
 variable "network_security_group_name" {}
+variable "frontend_ip_configuration" {
+}

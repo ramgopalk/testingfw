@@ -4,8 +4,8 @@ tenant_id       = "421b3bef-502a-4631-9b9b-2cebf650e2fb"
 client_secret   = "DJc8Q~KtV~F-ZuvumbFXkrOQXJ_DPzqYiQMgla4Y"
 object_id       = "b8dbe7ed-8410-4646-9339-544a6015d38f"
 //======================== Resource group details =====================//
-azurerm_resource_group = "fgt_rg"
-location               = "westus2"
+azurerm_resource_group = "az-cus-rg-orbcnt-hub"
+location               = "uk south"
 
 //=================== VM Details ====================================//
 vmname       = ["fgt_activevm_a", "fgt_activevm_b"]
@@ -17,18 +17,17 @@ fgtversion   = "7.2.2"
 vm_size      = "Standard_F4"
 hostname       = "ram"
 admin_username = "azureadmin"
-# admin_password = "Fortinet@123#"
+admin_password = "Fortinet@123#"
 
 //=================== VNET Details =====================//
-azurerm_virtual_network = "fgt_vnet"
+azurerm_virtual_network = "az-cus-vn130-hub"
 vnetaddress_space       = ["10.1.0.0/16"]
-
 //==================== Subnet Details ===================//
-subnet1                = "public_subnet"
+subnet1                = "az-cus-sn130-hub-fgt01"
 address_prefix_subnet1 = ["10.1.0.0/24"]
-subnet2                = "private_subnet"
+subnet2                = "az-cus-sn130-hub-fgt02"
 address_prefix_subnet2 = ["10.1.1.0/24"]
-subnet3                = "protected_subnet"
+subnet3                = "az-cus-sn130-hub-fgt03"
 address_prefix_subnet3 = ["10.1.1.1/32"]
 
 //==================== network_interface Details ===================//
@@ -36,6 +35,7 @@ nicnames = ["fgtvm-a_nic1", "fgtvm-a_nic2", "fgtvm-b_nic1", "fgtvm-b_nic2"]
 
 //==================== Load balancer Details ===================//
 loadbalancer1 = "external_lb"
+frontend_ip_configuration = "publicipadress"
 loadbalancer2 = "internal_lb"
 
 //=================== Keyvault ====================//
@@ -47,7 +47,7 @@ azurerm_public_ip           = "publicip-extlb"
 network_security_group_name = "Public-NSG"
 
 //==================== Storage account ================//
-storageaccount           = "fgtstorage"
+storageaccount           = "fgtstorage1"
 account_replication_type = "LRS"
 account_tier             = "Standard"
 containername            = "fgt-container"

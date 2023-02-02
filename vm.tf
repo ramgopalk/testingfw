@@ -45,8 +45,14 @@ resource "azurerm_virtual_machine" "test" {
   availability_set_id   = azurerm_availability_set.avset.id
   resource_group_name   = azurerm_resource_group.test.name
   network_interface_ids = [element(azurerm_network_interface.test.*.id, count.index)]
+  # primary_network_interface_id = [element(azurerm_network_interface.test.*.id, count.index)]
   vm_size               = var.vm_size
-  
+
+  plan {
+    name      = var.fgtsku
+    publisher = var.publisher
+    product   = var.fgtoffer
+  }
   # Uncomment this line to delete the OS disk automatically when deleting the VM
   # delete_os_disk_on_termination = true
 
